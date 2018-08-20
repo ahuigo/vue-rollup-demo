@@ -1,9 +1,23 @@
-'use strict';
+"use strict";
 
-import Vue from 'vue';
-import App from './App.vue';
+import Vue from "vue";
+import Appp from "./App.vue";
+
+import debug from 'debug';
+const log = debug('app:log');
+
+if (ENV !== "production") { 
+    debug.enable("*"); 
+    log("Logging is enabled!!");  
+    let s = document.createElement('script')
+    s.src = "http://" + (location.host || "localhost").split(":")[0] + ":35729/livereload.js?snipver=1" ; 
+    document.head.appendChild(s)
+} else { debug.disable(); }
+
 
 new Vue({
-    el: '#app',
-    render: h => h(App)
+    el: "#app",
+    template: "<Appp/>",
+    components: { Appp },
+    //render: h => h(App)
 });

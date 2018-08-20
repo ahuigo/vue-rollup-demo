@@ -4,6 +4,10 @@ import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import VuePlugin from "rollup-plugin-vue";
 
+import replace from 'rollup-plugin-replace';
+//import uglify from 'rollup-plugin-uglify';
+//import postcss from 'rollup-plugin-postcss';
+
 export default{
     //input: "src/main.js",
     input: ["src/index.js"],
@@ -20,6 +24,20 @@ export default{
 	},
     experimentalCodeSplitting: true,
     external: ["lodash", "d3","vue"],
-    plugins:[json(), resolve(), VuePlugin() ],
-    //plugins:[VuePlugin() ],
+    watch: {
+        //exclude: ['node_modules/**', 'dist/**',], //default  ignore
+        include: ['src/**','src/App.vue'],
+    },
+    plugins:[
+        json(), 
+        //resolve({ jsnext: true, main: true, browser: true, }), 
+        resolve({ browser: true, }), 
+        commonjs(),
+        VuePlugin(),
+        replace({
+          exclude: 'node_modules/**',
+          ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+        }),
+        (process.env.NODE_ENV === 'production' && uglify()),
+    ],
 };
