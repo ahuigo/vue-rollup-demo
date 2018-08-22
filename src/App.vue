@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
-            <h1>Vue TODO App10</h1>
+            <h1>Vue TODO App by ahuigo</h1>
             <table class="table table-striped table-bordered">
                 <tbody>
                     <tr>
