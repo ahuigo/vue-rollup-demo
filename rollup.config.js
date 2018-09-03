@@ -5,7 +5,8 @@ import babel from "rollup-plugin-babel";
 import VuePlugin from "rollup-plugin-vue";
 
 import replace from 'rollup-plugin-replace';
-//import uglify from 'rollup-plugin-uglify';
+
+import uglify from 'rollup-plugin-uglify';
 //import postcss from 'rollup-plugin-postcss';
 
 export default{
@@ -29,6 +30,7 @@ export default{
         include: ['src/**','src/App.vue'],
     },
     plugins:[
+        babel({ exclude: 'node_modules/**' }),
         json(), 
         //resolve({ jsnext: true, main: true, browser: true, }), 
         resolve({ browser: true, }), 

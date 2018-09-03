@@ -6,6 +6,18 @@ import Appp from "./App.vue";
 import debug from 'debug';
 const log = debug('app:log');
 
+
+@testable
+class MyTestableClass {
+  // ...
+}
+
+function testable(target) {
+  target.isTestable = true;
+}
+
+MyTestableClass.isTestable // true
+
 if (ENV !== "production") { 
     debug.enable("*"); 
     log("Logging is enabled!!");  
