@@ -18,6 +18,9 @@ function testable(target) {
 
 MyTestableClass.isTestable // true
 
+/**
+ * debug
+ */
 if (ENV !== "production") { 
     debug.enable("*"); 
     log("Logging is enabled!!");  
@@ -27,6 +30,9 @@ if (ENV !== "production") {
 } else { debug.disable(); }
 
 
+/**
+ * VUE
+ */
 new Vue({
     el: "#app",
     template: "<Appp/>",

@@ -18,13 +18,12 @@ export default{
         dir: "dist",
         //file: "dist/bundle.js",
         paths: {
-            d3: "https://d3js.org/d3.v4.min",
             vue: "https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.esm.browser.js",
         }
 
 	},
     experimentalCodeSplitting: true,
-    external: ["lodash", "d3","vue"],
+    external: ["lodash", "vue"],
     watch: {
         //exclude: ['node_modules/**', 'dist/**',], //default  ignore
         include: ['src/**','src/App.vue'],
