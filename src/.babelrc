@@ -1,9 +1,10 @@
 {
   "presets": [
+  'vue',
     [
     "latest", 
     { "es2015": { "modules": false } }
     ]
   ],
-  "plugins": ["external-helpers", "transform-decorators-legacy", "transform-object-rest-spread",  ], 
+  "plugins": ["transform-vue-template", "external-helpers", "transform-decorators-legacy", "transform-object-rest-spread",  ], 
 }

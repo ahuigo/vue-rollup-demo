@@ -31,8 +31,13 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
     'use strict';
+
+    @testable
+    class AhuiTestableClass {
+      // ...
+    }
 
     export default {
         data() {
